@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Details</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family:  sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    img {
+      max-width: 800px;
+      height: 450px;
+      margin: 0 auto;
+    }
+    .item-details{
+      margin: 10px;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    button{
+      background-color: #BE1622;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 10px;
+
+    }
+  p .item-details{
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/logo.svg" width ="125px">
+            </div>
+            <div class="name">
+                <h1>THE UCLAN STORE</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+ <main>
+  <h2>Item Details</h2>
+  <div id="item-details">
+    <!-- Display item details here using JavaScript -->
+  </div>
+  <button id="add-to-cart" onclick="addToCart()">Add to Cart</button>
+
+  <script>
+    // Retrieve the selected item from localStorage
+    var selectedItem = JSON.parse(localStorage.getItem('selectedItem'));
+
+    // Display item details
+    if (selectedItem) {
+      var itemDetailsElement = document.getElementById('item-details');
+      itemDetailsElement.innerHTML = `
+        <strong>${selectedItem[0]}</strong>
+        <img src="${selectedItem[4]}" alt="${selectedItem[0]}">
+        <p>${selectedItem[2]}</p>
+        <p>Price: ${selectedItem[3]}</p>
+      ` ;
+    }
+
+    // Function to add item to cart
+    function addToCart() {
+      var cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+      cartItems.push(selectedItem);
+      sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+      alert('Item added to cart!');
+    }
+  </script>
+</main>
+<footer>
+      
+  <div class="row">
+        <div class="footer-col-1">
+            <h3>Links</h3>
+                    <a href="">students' union</a>
+            </div>
+            <div class="footer-col-2">
+                <h3>Contact</h3>
+                    <p>E-mail: suinformation@uclan.ac.uk</p>
+                    <p>Phone: 01772 89 3000</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Location</h3>
+                    <p>University of Central Lancashire Students' union<br>Flyde Road, Preston, PR17BY<br>Registered in England<br>Company Number: 7623917<br>Registered Charity Number: 1142616</p>
+            </div>
+    </div>                  
+</footer>
+</body>
+</html>

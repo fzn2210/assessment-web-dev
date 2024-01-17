@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UCLan Clothing</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    main ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+   main ul li {
+      width: calc(50% - 20px);
+      box-sizing: border-box;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    main h3 {
+      color: hsl(0, 94%, 49%);
+      margin-bottom: 10px;
+    }
+    img {
+      max-width: 160px ;
+      height: 90px;
+      margin-top: 10px;
+      padding: 20px;
+    }
+    button{
+      background-color: #BE1622;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+      margin-left: 15px;
+
+    }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo.svg" width ="125px">
+                </div>
+                <div class="name">
+                    <h1>THE UCLAN STORE</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+<main>
+    <ul id="items-list">
+
+    </ul>
+        
+
+
+    <script src="script.js"></script>
+</main>    
+<footer>
+      
+    <div class="row">
+          <div class="footer-col-1">
+              <h3>Links</h3>
+                      <a href="">students' union</a>
+              </div>
+              <div class="footer-col-2">
+                  <h3>Contact</h3>
+                      <p>E-mail: suinformation@uclan.ac.uk</p>
+                      <p>Phone: 01772 89 3000</p>
+              </div>
+              <div class="footer-col-3">
+                  <h3>Location</h3>
+                      <p>University of Central Lancashire Students' union<br>Flyde Road, Preston, PR17BY<br>Registered in England<br>Company Number: 7623917<br>Registered Charity Number: 1142616</p>
+              </div>
+      </div>                  
+  </footer>
+
+
+</body>
+</html>
